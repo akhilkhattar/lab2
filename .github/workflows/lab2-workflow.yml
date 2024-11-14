@@ -15,7 +15,6 @@ on:
 
 jobs:
   job1:
-    runs-on: ubuntu-latest
     steps:
       - run: echo "Exploring Workflow Dispatch Trigger"
 
@@ -24,5 +23,5 @@ jobs:
     steps:
       - run: echo "${{inputs.custom_message}}"
       - name: Printing run-job boolean value
-        if: ${{inputs.run_job == true}}
+        if: ${{inputs.run_job == 'true'}}
         run: echo "${{inputs.run_job}}"
